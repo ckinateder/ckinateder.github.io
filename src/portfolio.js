@@ -9,7 +9,7 @@ const about = {
   name: 'Calvin Kinateder',
   role: 'Software Developer',
   description:
-    'I\'m a computer science student and software developer focused on building applications that are well-designed from the inside out. Whether research or UX-oriented, my vision for every project is that it be just as developer-friendly as user-friendly. I\'m currently pursuing a BS and MS in computer science at the University of Cincinnati.',
+    'I\'m a computer science student and software developer focused on building applications that are well-designed from the inside out. Whether research or UX-oriented, my vision for every project is for it to be equally well-designed on the inside and out. I\'m currently pursuing a BS and MS in computer science at the University of Cincinnati.',
   resume: 'https://calvinkinateder.com',
   social: {
     linkedin: 'https://www.linkedin.com/in/calvin-kinateder/',
@@ -49,18 +49,27 @@ const projects = [
 const skills = [
   // skills can be added or removed
   // if there are no skills, Skills section won't show up
+  'Python',
+  'C++',
+  'Java',
+  'JavaScript',
   'HTML',
   'CSS',
-  'JavaScript',
-  'TypeScript',
-  'React',
-  'Redux',
-  'SASS',
-  'Material UI',
+  'Golang',
   'Git',
-  'CI/CD',
-  'Jest',
-  'Enzyme',
+  'Bash',
+  'Linux',
+  'MySQL',
+  'MATLAB',
+  'API development',
+  'TensorRT',
+  'Tensorflow',
+  'PyTorch',
+  'Docker',
+  'Algorithms',
+  'Data Structures',
+  'Federated Learning',
+  'Differential Privacy',
 ]
 
 const contact = {
