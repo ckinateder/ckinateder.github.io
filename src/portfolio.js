@@ -23,25 +23,25 @@ const projects = [
     name: 'flower-dp',
     description:
       'Fully functional boilerplate for differentially private federated learning',
-    stack: ['PyTorch', 'Tensorflow', 'Flower'],
+    stack: ['Python', 'PyTorch', 'Tensorflow', 'Docker'],
     sourceCode: 'https://github.com/ckinateder/flower-dp',
     livePreview: 'https://github.com/ckinateder/flower-dp',
   },
   {
-    name: 'Project 2',
+    name: 'blackswan-mvp',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+      'Semi-HFT stock trading bot built around the FinnHub and Alpaca trading APIs',
+    stack: ['Python', 'Sklearn', 'Docker'],
+    sourceCode: 'https://ckinateder.github.io/blackswan-mvp/',
+    livePreview: 'https://ckinateder.github.io/blackswan-mvp/',
   },
   {
-    name: 'Project 3',
+    name: 'Abraham',
     description:
-      'Amet asperiores et impedit aliquam consectetur? Voluptates sed a nulla ipsa officia et esse aliquam',
-    stack: ['SASS', 'TypeScript', 'React'],
-    sourceCode: 'https://github.com',
-    livePreview: 'https://github.com',
+      'Sentiment analysis Python package for news articles and Twitter',
+    stack: ['Python', 'VADER', 'NLTK'],
+    sourceCode: 'https://github.com/ckinateder/abraham',
+    livePreview: 'https://ckinateder.github.io/abraham/',
   },
 ]
 
