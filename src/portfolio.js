@@ -36,7 +36,7 @@ const projects = [
     livePreview: 'https://ckinateder.github.io/blackswan-mvp/',
   },
   {
-    name: 'Abraham',
+    name: 'abraham',
     description:
       'Sentiment analysis Python package for news articles and Twitter',
     stack: ['Python', 'VADER', 'NLTK'],

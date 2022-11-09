@@ -3,6 +3,9 @@
   line-height: 1.5;
   color: var(--clr-fg);
   background-color: var(--clr-bg);
+
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .light {
@@ -12,6 +15,7 @@
   --clr-fg-alt: rgb(75, 65, 65);
   --clr-primary: #b52929;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  
 }
 
 .dark {
