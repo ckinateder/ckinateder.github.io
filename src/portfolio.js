@@ -9,7 +9,7 @@ const about = {
   name: 'Calvin Kinateder',
   role: 'Software Developer',
   description:
-    'I\'m a computer science student and software developer focused on building applications that are perfectly designed from the inside out. Whether research or UX-oriented, my vision is that every project be equally end-user and developer oriented. I\'m currently pursuing a BS and MS in computer science at the University of Cincinnati.',
+    'I\'m a computer science student and software developer focused on building applications that are perfectly designed from the inside out. No matter what I\'m working on, my vision is for an equal focus on both the developer and the user. I\'m currently pursuing a BS and MS in computer science at the University of Cincinnati.',
   resume: 'https://drive.google.com/file/d/1RiUoG0KicpDSht8LuxRDVp09w0K7LGao/view?usp=sharing',
   social: {
     linkedin: 'https://www.linkedin.com/in/calvin-kinateder/',
