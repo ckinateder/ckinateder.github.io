@@ -45,6 +45,40 @@ const projects = [
   },
 ]
 
+const experience = [
+  // projects can be added an removed
+  {
+    title: 'Software Developer Co-op',
+    company: 'Siemens',
+    description:
+      'Researched cutting-edge technologies via academic papers to explore how they could be used for profit',
+    stack: ['Python', 'PyTorch', 'Tensorflow', 'Docker', 'Bash'],
+    companyLink: 'https://www.siemens.com/',
+    startDate: 'Jan 2022',
+    endDate: 'Current',
+  },
+  {
+    title: 'Computer Engineer Co-op',
+    company: 'Skyward LTD',
+    description:
+      'Implemented real-time inference for anomaly detection on incoming aircraft ADS-B transmissions',
+    stack: ['C++', 'Golang', 'Tensorflow', 'TensorRT', 'Docker'],
+    companyLink: 'https://skywardltd.com/',
+    startDate: 'Jun 2021',
+    endDate: 'Aug 2021',
+  },
+  {
+    title: 'Software Development Intern',
+    company: 'CoverMyMeds',
+    description:
+      'Created monitoring applications to observe production and development environments',
+    stack: ['Python', 'HTML', 'JavaScript', 'Ruby on Rails', 'Agile'],
+    companyLink: 'https://www.covermymeds.com/main/',
+    startDate: 'Jun 2019',
+    endDate: 'Aug 2019',
+  },
+]
+
 const skills = [
   // skills can be added or removed
   // if there are no skills, Skills section won't show up
@@ -76,4 +110,4 @@ const contact = {
   email: 'calvinkinateder@gmail.com',
 }
 
-export { header, about, projects, skills, contact }
+export { header, about, projects, experience, skills, contact }

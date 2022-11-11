@@ -13,6 +13,7 @@
   --clr-bg-alt: #fff;
   --clr-fg: rgb(94, 77, 77);
   --clr-fg-alt: rgb(75, 65, 65);
+  --clr-fg-subhead: rgb(118, 114, 114);
   --clr-primary: #b52929;
   --shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   
@@ -23,6 +24,7 @@
   --clr-bg-alt: #2a2f4c;
   --clr-fg: #bdbddd;
   --clr-fg-alt: #cdcdff;
+  --clr-fg-subhead: #bdbdd8;
   --clr-primary: #90a0d9;
   --shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
     rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
