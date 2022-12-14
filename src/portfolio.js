@@ -24,8 +24,6 @@ const projects = [
     description:
       'Fully functional boilerplate for differentially private federated learning',
     stack: ['Python', 'PyTorch', 'Tensorflow', 'Docker'],
-    sourceCode: 'https://github.com/ckinateder/flower-dp',
-    livePreview: 'https://github.com/ckinateder/flower-dp',
   },
   {
     name: 'blackswan-mvp',
