@@ -12,7 +12,7 @@ const Contact = () => {
           Email Me
         </span>
       </a>
-      <a href={contact.meeting}>
+      <a href={contact.meeting}  target="_blank" rel="noreferrer">
         <span type='button' className='btn btn--outline'>
           Schedule a Meeting
         </span>

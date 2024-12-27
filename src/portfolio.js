@@ -37,7 +37,7 @@ const projects = [
   {
     name: 'stegosaurus-midi',
     description:
-      'Hardware MIDI controller built on the RP2040/Arduino platform',
+      'Embedded MIDI controller built on the RP2040 + Arduino platform for audio device manipulation',
     stack: ['C++', 'JavaScript', 'WebMIDI', 'UNIX'],
     sourceCode: 'https://github.com/ckinateder/stegosaurus-midi',
     livePreview: 'https://ckinateder.github.io/stegosaurus-midi/',

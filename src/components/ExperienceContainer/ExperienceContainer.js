@@ -23,6 +23,7 @@ const ExperienceContainer = ({ experience }) => (
         href={experience.companyLink}
         aria-label='comany link'
         className='link link--icon'
+        target="_blank" rel="noreferrer"
       >
         <LaunchIcon />
       </a>
