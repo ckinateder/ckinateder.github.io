@@ -35,12 +35,12 @@ const projects = [
     livePreview: 'https://ckinateder.github.io/blackswan-mvp/',
   },
   {
-    name: 'abraham',
+    name: 'stegosaurus-midi',
     description:
-      'Sentiment analysis Python package for news articles and Twitter',
-    stack: ['Python', 'VADER', 'NLTK'],
-    sourceCode: 'https://github.com/ckinateder/abraham',
-    livePreview: 'https://ckinateder.github.io/abraham/',
+      'Hardware MIDI controller built on the RP2040/Arduino platform',
+    stack: ['C++', 'JavaScript', 'WebMIDI', 'UNIX'],
+    sourceCode: 'https://github.com/ckinateder/stegosaurus-midi',
+    livePreview: 'https://ckinateder.github.io/stegosaurus-midi/',
   },
 ]
 
