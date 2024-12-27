@@ -54,7 +54,7 @@ const experience = [
     stack: ['Python', 'PyTorch', 'Tensorflow', 'Docker', 'Bash'],
     companyLink: 'https://www.siemens.com/',
     startDate: 'Jan 2022',
-    endDate: 'Current',
+    endDate: 'August 2024',
   },
   {
     title: 'Computer Engineer Co-op',
@@ -79,34 +79,41 @@ const experience = [
 ]
 
 const skills = [
-  // skills can be added or removed
-  // if there are no skills, Skills section won't show up
-  'Python',
-  'C++',
-  'Java',
-  'JavaScript',
-  'HTML',
-  'CSS',
-  'Golang',
-  'Git',
-  'Bash',
-  'Linux',
-  'MySQL',
-  'MATLAB',
-  'API development',
-  'TensorRT',
-  'Tensorflow',
-  'PyTorch',
-  'Docker',
-  'Algorithms',
-  'Data Structures',
-  'Federated Learning',
-  'Differential Privacy',
+  'Python', 
+  'C++', 
+  'C',
+  'Java', 
+  'JavaScript', 
+  'HTML', 
+  'CSS', 
+  'Golang', 
+  'Git', 
+  'Bash', 
+  'Linux', 
+  'MySQL', 
+  'MATLAB', 
+  'PyTorch', 
+  'CUDA', 
+  'TensorRT', 
+  'TensorFlow', 
+  'API Development', 
+  'Computer Vision', 
+  'Docker', 
+  'Algorithms', 
+  'Data Structures', 
+  'Federated Learning', 
+  'Transformers', 
+  'Differential Privacy', 
+  'Circuitry', 
+  'CSG', 
+  'LLMs', 
+  'Math Logic'
 ]
 
 const contact = {
   // email is optional - if left empty Contact section won't show up
   email: 'calvinkinateder@gmail.com',
+  meeting: 'https://cal.com/calvin-kinateder-pj379i/30min',
 }
 
 export { header, about, projects, experience, skills, contact }

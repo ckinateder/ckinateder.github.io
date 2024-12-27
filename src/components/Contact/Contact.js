@@ -12,6 +12,11 @@ const Contact = () => {
           Email me
         </span>
       </a>
+      <a href={contact.meeting}>
+        <span type='button' className='btn btn--outline'>
+          Schedule a Meeting
+        </span>
+      </a>
     </section>
   )
 }
