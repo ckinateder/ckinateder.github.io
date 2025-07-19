@@ -9,7 +9,7 @@ const about = {
   name: 'Calvin Kinateder',
   role: 'Software Developer',
   description:
-    "I'm a computer science student and software developer focused on building applications that are perfectly designed from the inside out. No matter what I'm working on, my vision is for an equal focus on both the developer and the user. I'm currently pursuing my BS and MS in Computer Science at the University of Cincinnati, and I'll be graduating in May 2025.",
+    "I'm a computer science student and software engineer focused on building applications that are perfectly designed from the inside out. No matter what I'm working on, my vision is for an equal focus on both the developer and the user. I received my BS and MS in Computer Science from the University of Cincinnati in 2025.",
   resume:
     'https://drive.google.com/file/d/1RiUoG0KicpDSht8LuxRDVp09w0K7LGao/view?usp=sharing',
   social: {
@@ -116,4 +116,10 @@ const contact = {
   meeting: 'https://cal.com/calvin-kinateder-pj379i/30min',
 }
 
-export { header, about, projects, experience, skills, contact }
+const thesis = {
+  title: 'A Novel Approach To Implementing Knowledge Distillation In Tsetlin Machines',
+  link: 'https://drive.google.com/file/d/1H3Vv4RFBbQX8l7AghBGuidi_6qXoA4YN/view?usp=sharing',
+  description: "The Tsetlin Machine (TM) is a propositional logic based model that uses conjunctive clauses to learn patterns from data. As with typical neural networks, the performance of a Tsetlin Machine is largely dependent on its parameter count, with a larger number of parameters producing higher accuracy but slower execution. Knowledge distillation in neural networks transfers information from an already-trained teacher model to a smaller student model to increase accuracy in the student without increasing execution time. We propose a novel approach to implementing knowledge distillation in Tsetlin Machines by utilizing the probability distributions of each output sample in the teacher to provide additional context to the student. Additionally, we propose a novel clause-transfer algorithm that weighs the importance of each clause in the teacher and initializes the student with only the most essential data. We find that our algorithm can significantly improve performance in the student model without negatively impacting latency in the tested domains of image recognition and text classification."
+}
+
+export { header, about, projects, experience, skills, contact, thesis }
