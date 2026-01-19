@@ -7,7 +7,7 @@ const header = {
 const about = {
   // all the properties are optional - can be left empty or deleted
   name: 'Calvin Kinateder',
-  role: 'Software Developer',
+  role: 'Software Engineer',
   description:
     "I'm a software engineer focused on building applications that are perfectly designed from the inside out. No matter what I'm working on, my vision is for an equal focus on both the developer and the user. I received my B.S. and M.S. in Computer Science from the University of Cincinnati in 2025.",
   resume:
