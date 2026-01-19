@@ -9,7 +9,7 @@ const about = {
   name: 'Calvin Kinateder',
   role: 'Software Developer',
   description:
-    "I'm a computer science student and software engineer focused on building applications that are perfectly designed from the inside out. No matter what I'm working on, my vision is for an equal focus on both the developer and the user. I received my BS and MS in Computer Science from the University of Cincinnati in 2025.",
+    "I'm a software engineer focused on building applications that are perfectly designed from the inside out. No matter what I'm working on, my vision is for an equal focus on both the developer and the user. I received my B.S. and M.S. in Computer Science from the University of Cincinnati in 2025.",
   resume:
     'https://drive.google.com/file/d/1RiUoG0KicpDSht8LuxRDVp09w0K7LGao/view?usp=sharing',
   social: {
@@ -27,12 +27,12 @@ const projects = [
     stack: ['Python', 'PyTorch', 'Tensorflow', 'Docker'],
   },
   {
-    name: 'blackswan-mvp',
+    name: 'bacta',
     description:
-      'Semi-HFT stock trading bot built around the FinnHub and Alpaca trading APIs',
-    stack: ['Python', 'Sklearn', 'Docker'],
-    sourceCode: 'https://ckinateder.github.io/blackswan-mvp/',
-    livePreview: 'https://ckinateder.github.io/blackswan-mvp/',
+      'Python library for backtesting algorithmic trading strategies',
+    stack: ['Python', 'Numpy', 'Docker'],
+    sourceCode: 'https://github.com/ckinateder/bacta/',
+    livePreview: 'https://github.com/ckinateder/bacta/',
   },
   {
     name: 'stegosaurus-midi',
@@ -42,10 +42,29 @@ const projects = [
     sourceCode: 'https://github.com/ckinateder/stegosaurus-midi',
     livePreview: 'https://ckinateder.github.io/stegosaurus-midi/',
   },
+  {
+    name: 'google-photos-exif-merger',
+    description:
+      'Fixes the broken EXIF data in Google Photos exports',
+    stack: ['Python', 'EXIF', 'Web'],
+    sourceCode: 'https://github.com/ckinateder/google-photos-exif-merger',
+    livePreview: 'https://github.com/ckinateder/google-photos-exif-merger',
+  }
 ]
 
+
+
 const experience = [
-  // projects can be added an removed
+  {
+    title: 'Software Engineer',
+    company: 'SRC, Inc.',
+    description:
+      'Supporting the Electronic Warfare division at AFRL, Wright Patterson Air Force Base.',
+    stack: ['Node.js', 'Python', 'MATLAB', 'Docker', 'Jenkins'],
+    companyLink: 'https://www.srcinc.com/',
+    startDate: 'Jun 2025',
+    endDate: 'Present',
+  },
   {
     title: 'Software Developer Co-op',
     company: 'Siemens',
@@ -84,6 +103,7 @@ const skills = [
   'C',
   'Java', 
   'JavaScript', 
+  'Node.js',
   'HTML', 
   'CSS', 
   'Golang', 
