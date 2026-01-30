@@ -22,7 +22,7 @@ const About = () => {
           </h2>
         )}
 
-        <p className='text-lg text-slate-300 max-w-2xl leading-relaxed mb-10 glass p-6 border-l-4 border-orange-500 rounded-r-xl rounded-l-sm'>
+        <p className='text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed mb-10 glass p-6 border-l-4 border-orange-500 rounded-r-xl rounded-l-sm'>
           {description}
         </p>
 

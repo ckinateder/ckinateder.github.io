@@ -10,7 +10,7 @@ const Thesis = () => {
       <div className="glass p-8 md:p-12">
         <h3 className="text-2xl md:text-3xl font-bold text-slate-100 mb-4">{thesis.title}</h3>
         <h4 className="text-orange-400 font-medium mb-4 uppercase tracking-wider">Abstract</h4>
-        <p className="text-slate-300 leading-relaxed mb-8 text-lg">{thesis.description}</p>
+        <p className="text-slate-300 leading-relaxed mb-8 text-base md:text-lg">{thesis.description}</p>
         <a
           href={thesis.link}
           target="_blank"
