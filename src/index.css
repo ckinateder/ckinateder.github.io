@@ -1,58 +1,45 @@
-* {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  outline: 0;
-  background-color: inherit;
-  color: inherit;
-  font-family: inherit;
-  font-size: inherit;
-  box-shadow: none;
-  box-sizing: border-box;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
-
-h1,
-h2,
-h3,
-h4 {
-  line-height: 1.2;
-  color: var(--clr-fg-alt);
-}
-
-h1 {
-  font-size: 4rem;
-}
-
-h2 {
-  font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-h4 {
-  font-size: 1.3rem;
-}
-
-ul {
-  list-style-type: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-@media (max-width: 900px) {
-  h1 {
-    font-size: 2.6rem;
+@layer base {
+  body {
+    @apply bg-slate-900 text-slate-100 antialiased overflow-x-hidden selection:bg-orange-600 selection:text-white;
+    font-family: 'Poppins', sans-serif;
   }
+}
+
+@layer components {
+  .glass {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl rounded-2xl;
+  }
+  
+  .glass-card {
+    @apply glass hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-white/20;
+  }
+
+  .btn-primary {
+    @apply px-6 py-2 bg-gradient-to-r from-orange-500 to-orange-700 rounded-full font-semibold hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105;
+  }
+
+  .btn-outline {
+    @apply px-6 py-2 border border-orange-500/50 rounded-full font-semibold hover:bg-orange-500/10 hover:border-orange-500 transition-all duration-300;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-5xl font-bold mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600 leading-tight pb-2;
+  }
+}
+
+.gradient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(154, 52, 18, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(234, 88, 12, 0.15) 0%, transparent 50%);
+  pointer-events: none;
 }

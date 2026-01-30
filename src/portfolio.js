@@ -25,6 +25,7 @@ const projects = [
     description:
       'Fully functional boilerplate for differentially private federated learning',
     stack: ['Python', 'PyTorch', 'Tensorflow', 'Docker'],
+    livePreview: 'https://ckinateder.github.io/flower-dp/',
   },
   {
     name: 'bacta',
@@ -32,7 +33,13 @@ const projects = [
       'Python library for backtesting algorithmic trading strategies',
     stack: ['Python', 'Numpy', 'Docker'],
     sourceCode: 'https://github.com/ckinateder/bacta/',
-    livePreview: 'https://github.com/ckinateder/bacta/',
+  },
+  {
+    name: 'google-photos-exif-merger',
+    description:
+      'Fixes the broken EXIF data in Google Photos exports',
+    stack: ['Python', 'EXIF', 'Web'],
+    sourceCode: 'https://github.com/ckinateder/google-photos-exif-merger',
   },
   {
     name: 'stegosaurus-midi',
@@ -42,14 +49,6 @@ const projects = [
     sourceCode: 'https://github.com/ckinateder/stegosaurus-midi',
     livePreview: 'https://ckinateder.github.io/stegosaurus-midi/',
   },
-  {
-    name: 'google-photos-exif-merger',
-    description:
-      'Fixes the broken EXIF data in Google Photos exports',
-    stack: ['Python', 'EXIF', 'Web'],
-    sourceCode: 'https://github.com/ckinateder/google-photos-exif-merger',
-    livePreview: 'https://github.com/ckinateder/google-photos-exif-merger',
-  }
 ]
 
 
@@ -66,7 +65,7 @@ const experience = [
     endDate: 'Present',
   },
   {
-    title: 'Software Developer Co-op',
+    title: 'Software Engineer Co-op',
     company: 'Siemens',
     description:
       'Researched cutting-edge technologies via academic papers to explore how they could be used for profit',
@@ -102,10 +101,8 @@ const skills = [
   'C++', 
   'C',
   'Java', 
-  'JavaScript', 
+  'TypeScript', 
   'Node.js',
-  'HTML', 
-  'CSS', 
   'Golang', 
   'Git', 
   'Bash', 
@@ -122,7 +119,6 @@ const skills = [
   'Algorithms', 
   'Data Structures', 
   'Federated Learning', 
-  'Transformers', 
   'Differential Privacy', 
   'Circuitry', 
   'CSG', 
