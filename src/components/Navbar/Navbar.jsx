@@ -2,11 +2,13 @@ import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTheme } from '../../contexts/theme'
 import { experience, projects, skills, thesis, contact } from '../../portfolio'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const { theme, toggleTheme } = useTheme()
   const location = useLocation()
 
   useEffect(() => {
@@ -28,12 +30,12 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-slate-900/80 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      className={`fixed top-0 left-0 w-full z-50 border-b-4 border-black transition-colors duration-150 ${
+        theme === 'dark' ? 'bg-slate-900' : 'bg-slate-100'
       }`}
     >
       <div className='container mx-auto px-6 py-4 flex justify-between items-center'>
-        <Link to='/' className='text-2xl font-bold bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent'>
+        <Link to='/' className='text-2xl font-black text-orange-500'>
           CK.
         </Link>
 
@@ -43,20 +45,46 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className='text-slate-300 hover:text-orange-400 transition-colors text-sm font-medium'
+              className={`font-bold text-sm transition-colors duration-150 ${
+                theme === 'dark' ? 'text-slate-100 hover:text-orange-500' : 'text-slate-900 hover:text-orange-500'
+              }`}
             >
               {link.name}
             </a>
           ))}
+          <button
+            onClick={toggleTheme}
+            className={`p-2 border-2 border-black transition-colors duration-150 ${
+              theme === 'dark' 
+                ? 'bg-slate-800 text-slate-100 hover:bg-slate-700' 
+                : 'bg-white text-slate-900 hover:bg-slate-200'
+            }`}
+            aria-label='toggle theme'
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
         </div>
 
         {/* Mobile Toggle */}
-        <button
-          className='md:hidden text-slate-100'
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className='md:hidden flex items-center gap-4'>
+          <button
+            onClick={toggleTheme}
+            className={`p-2 border-2 border-black transition-colors duration-150 ${
+              theme === 'dark' 
+                ? 'bg-slate-800 text-slate-100 hover:bg-slate-700' 
+                : 'bg-white text-slate-900 hover:bg-slate-200'
+            }`}
+            aria-label='toggle theme'
+          >
+            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+          </button>
+          <button
+            className={theme === 'dark' ? 'text-slate-100' : 'text-slate-900'}
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -66,14 +94,19 @@ const Navbar = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className='md:hidden absolute top-full left-0 w-full bg-slate-900/95 backdrop-blur-xl border-b border-white/10 p-6 flex flex-col space-y-4 shadow-xl'
+            transition={{ duration: 0.15 }}
+            className={`md:hidden absolute top-full left-0 w-full border-b-4 border-black p-6 flex flex-col space-y-4 ${
+              theme === 'dark' ? 'bg-slate-900' : 'bg-slate-100'
+            }`}
           >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className='text-slate-300 hover:text-cyan-400 text-lg font-medium'
+                className={`text-lg font-bold transition-colors duration-150 ${
+                  theme === 'dark' ? 'text-slate-100 hover:text-orange-500' : 'text-slate-900 hover:text-orange-500'
+                }`}
               >
                 {link.name}
               </a>

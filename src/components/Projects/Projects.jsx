@@ -6,7 +6,7 @@ const Projects = () => {
 
   return (
     <section id='projects' className='py-20'>
-      <h2 className='section-title'>Projects</h2>
+      <h2 className='brutal-title-orange'>Projects</h2>
 
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
         {projects.map((project, id) => (

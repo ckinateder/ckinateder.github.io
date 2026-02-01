@@ -5,10 +5,10 @@ const Skills = () => {
 
   return (
     <section id='skills' className='py-20'>
-      <h2 className='section-title text-center'>Skills</h2>
+      <h2 className='brutal-title-orange text-center'>Skills</h2>
       <div className='flex flex-wrap justify-center gap-4 max-w-4xl mx-auto'>
         {skills.map((skill, id) => (
-          <span key={id} className='px-4 py-2 glass hover:bg-white/10 transition-colors text-slate-200 text-sm md:text-base cursor-default'>
+          <span key={id} className='brutal-badge cursor-default'>
             {skill}
           </span>
         ))}

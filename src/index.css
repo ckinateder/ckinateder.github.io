@@ -4,42 +4,89 @@
 
 @layer base {
   body {
-    @apply bg-slate-900 text-slate-100 antialiased overflow-x-hidden selection:bg-orange-600 selection:text-white;
+    @apply antialiased overflow-x-hidden selection:bg-orange-500 selection:text-white;
     font-family: 'Poppins', sans-serif;
+  }
+
+  [data-theme="dark"] {
+    @apply bg-slate-900 text-slate-100;
+  }
+
+  [data-theme="light"] {
+    @apply bg-slate-100 text-slate-900;
   }
 }
 
 @layer components {
-  .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl rounded-2xl;
+  .brutal-card {
+    @apply border-4 border-black p-6 md:p-8;
+  }
+
+  [data-theme="dark"] .brutal-card {
+    @apply bg-slate-800 border-black;
+  }
+
+  [data-theme="light"] .brutal-card {
+    @apply bg-white border-black;
   }
   
-  .glass-card {
-    @apply glass hover:bg-white/10 transition-all duration-300 hover:-translate-y-1 hover:border-white/20;
+  .brutal-card-dark {
+    @apply border-4 border-black p-6 md:p-8;
   }
 
-  .btn-primary {
-    @apply px-6 py-2 bg-gradient-to-r from-orange-500 to-orange-700 rounded-full font-semibold hover:shadow-lg hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105;
+  [data-theme="dark"] .brutal-card-dark {
+    @apply bg-black border-black text-white;
   }
 
-  .btn-outline {
-    @apply px-6 py-2 border border-orange-500/50 rounded-full font-semibold hover:bg-orange-500/10 hover:border-orange-500 transition-all duration-300;
+  [data-theme="light"] .brutal-card-dark {
+    @apply bg-slate-900 border-black text-white;
+  }
+
+  .brutal-btn-primary {
+    @apply px-6 py-3 bg-orange-500 border-4 border-black font-bold text-white hover:bg-orange-600 transition-colors duration-150;
+  }
+
+  .brutal-btn-outline {
+    @apply px-6 py-3 border-4 border-black font-bold transition-colors duration-150;
+  }
+
+  [data-theme="dark"] .brutal-btn-outline {
+    @apply bg-slate-800 border-black text-orange-500 hover:bg-orange-500 hover:text-white;
+  }
+
+  [data-theme="light"] .brutal-btn-outline {
+    @apply bg-white border-black text-orange-500 hover:bg-orange-500 hover:text-white;
   }
   
-  .section-title {
-    @apply text-3xl md:text-5xl font-bold mb-8 md:mb-12 bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600 leading-tight pb-2;
+  .brutal-title {
+    @apply text-3xl md:text-5xl font-black mb-8 md:mb-12;
   }
-}
 
-.gradient-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
-  background: 
-    radial-gradient(circle at 15% 50%, rgba(154, 52, 18, 0.15) 0%, transparent 50%),
-    radial-gradient(circle at 85% 30%, rgba(234, 88, 12, 0.15) 0%, transparent 50%);
-  pointer-events: none;
+  [data-theme="dark"] .brutal-title {
+    @apply text-slate-100;
+  }
+
+  [data-theme="light"] .brutal-title {
+    @apply text-slate-900;
+  }
+
+  .brutal-title-orange {
+    @apply text-3xl md:text-5xl font-black mb-8 md:mb-12 text-orange-500;
+  }
+
+  .brutal-badge {
+    @apply px-3 py-1 border-2 border-black text-xs font-bold;
+  }
+
+  [data-theme="dark"] .brutal-badge {
+    @apply bg-slate-800 border-black text-slate-100;
+  }
+
+  [data-theme="light"] .brutal-badge {
+    @apply bg-white border-black text-slate-900;
+  }
+
+  .brutal-badge-dark {
+    @apply px-3 py-1 bg-black border-2 border-black text-orange-500 text-xs font-bold;
+  }
 }

@@ -1,34 +1,44 @@
 import { about } from '../../portfolio'
 import { motion } from 'framer-motion'
 import { Github, Linkedin, FileText } from 'lucide-react'
+import { useTheme } from '../../contexts/theme'
 
 const About = () => {
   const { name, role, description, resume, social } = about
+  const { theme } = useTheme()
 
   return (
-    <section className='min-h-screen flex flex-col justify-center py-20 pb-32'>
+    <section className={`min-h-screen flex flex-col justify-center py-20 pb-32 transition-colors duration-150 ${
+      theme === 'dark' ? 'bg-slate-900' : 'bg-slate-100'
+    }`}>
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
+        transition={{ duration: 0.3, ease: "easeOut" }}
       >
-        <h1 className='text-5xl md:text-7xl font-bold mb-6 text-slate-100'>
-          Hi, I'm <span className='bg-clip-text text-transparent bg-gradient-to-r from-orange-400 to-orange-600'>{name}.</span>
+        <h1 className={`text-5xl md:text-7xl font-black mb-6 ${
+          theme === 'dark' ? 'text-slate-100' : 'text-slate-900'
+        }`}>
+          Hi, I'm <span className='text-orange-500'>{name}.</span>
         </h1>
         
         {role && (
-          <h2 className='text-2xl md:text-4xl font-medium text-slate-400 mb-8'>
+          <h2 className={`text-2xl md:text-4xl font-bold mb-8 ${
+            theme === 'dark' ? 'text-slate-200' : 'text-slate-800'
+          }`}>
             {role}
           </h2>
         )}
 
-        <p className='text-base md:text-lg text-slate-300 max-w-2xl leading-relaxed mb-10 glass p-6 border-l-4 border-orange-500 rounded-r-xl rounded-l-sm'>
+        <p className={`text-base md:text-lg max-w-2xl leading-relaxed mb-10 brutal-card border-4 border-black p-6 ${
+          theme === 'dark' ? 'text-slate-200' : 'text-slate-800'
+        }`}>
           {description}
         </p>
 
         <div className='flex flex-wrap gap-4'>
           {resume && (
-            <a href={resume} target="_blank" rel="noopener noreferrer" className='btn-primary flex items-center gap-2'>
+            <a href={resume} target="_blank" rel="noopener noreferrer" className='brutal-btn-primary flex items-center gap-2'>
               <FileText size={20} />
               Resume
             </a>
@@ -42,7 +52,7 @@ const About = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label='github'
-                  className='btn-outline flex items-center gap-2 text-slate-100'
+                  className='brutal-btn-outline flex items-center gap-2'
                 >
                   <Github size={20} />
                   GitHub
@@ -55,7 +65,7 @@ const About = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label='linkedin'
-                  className='btn-outline flex items-center gap-2 text-slate-100'
+                  className='brutal-btn-outline flex items-center gap-2'
                 >
                   <Linkedin size={20} />
                   LinkedIn
