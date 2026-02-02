@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 border-b-4 border-black transition-colors duration-150 ${
-        theme === 'dark' ? 'bg-slate-900' : 'bg-slate-100'
+        theme === 'dark' ? 'bg-gray-950' : 'bg-slate-100'
       }`}
     >
       <div className='container mx-auto px-6 py-4 flex justify-between items-center'>
@@ -56,7 +56,7 @@ const Navbar = () => {
             onClick={toggleTheme}
             className={`p-2 border-2 border-black transition-colors duration-150 ${
               theme === 'dark' 
-                ? 'bg-slate-800 text-slate-100 hover:bg-slate-700' 
+                ? 'bg-gray-900 text-slate-100 hover:bg-gray-800' 
                 : 'bg-white text-slate-900 hover:bg-slate-200'
             }`}
             aria-label='toggle theme'
@@ -71,7 +71,7 @@ const Navbar = () => {
             onClick={toggleTheme}
             className={`p-2 border-2 border-black transition-colors duration-150 ${
               theme === 'dark' 
-                ? 'bg-slate-800 text-slate-100 hover:bg-slate-700' 
+                ? 'bg-gray-900 text-slate-100 hover:bg-gray-800' 
                 : 'bg-white text-slate-900 hover:bg-slate-200'
             }`}
             aria-label='toggle theme'
@@ -96,7 +96,7 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.15 }}
             className={`md:hidden absolute top-full left-0 w-full border-b-4 border-black p-6 flex flex-col space-y-4 ${
-              theme === 'dark' ? 'bg-slate-900' : 'bg-slate-100'
+              theme === 'dark' ? 'bg-gray-950' : 'bg-slate-100'
             }`}
           >
             {navLinks.map((link) => (

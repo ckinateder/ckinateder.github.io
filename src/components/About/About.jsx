@@ -9,7 +9,7 @@ const About = () => {
 
   return (
     <section className={`min-h-screen flex flex-col justify-center py-20 pb-32 transition-colors duration-150 ${
-      theme === 'dark' ? 'bg-slate-900' : 'bg-slate-100'
+      theme === 'dark' ? 'bg-gray-950' : 'bg-slate-100'
     }`}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
