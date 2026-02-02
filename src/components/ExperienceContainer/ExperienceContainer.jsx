@@ -16,17 +16,17 @@ const ExperienceContainer = ({ experience }) => {
       <div className='flex justify-between items-start mb-4'>
         <div>
           <h3 className={`text-xl md:text-2xl font-black ${
-            theme === 'dark' ? 'text-slate-100' : 'text-slate-900'
+            theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
           }`}>{experience.company}</h3>
           <p className='text-orange-500 font-bold'>{experience.title}</p>
         </div>
         <p className={`text-sm whitespace-nowrap ml-4 font-bold ${
-          theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+          theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
         }`}>{experience.startDate} – {experience.endDate}</p>
       </div>
       
       <p className={`mb-6 flex-grow leading-relaxed font-medium ${
-        theme === 'dark' ? 'text-slate-200' : 'text-slate-800'
+        theme === 'dark' ? 'text-zinc-200' : 'text-zinc-800'
       }`}>{experience.description}</p>
     
     <div className='mt-auto'>

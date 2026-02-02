@@ -11,12 +11,12 @@ import Blog from './components/Blog/Blog'
 
 const Home = () => (
   <>
-    <About />
-    <Experience />
-    <Projects />
-    <Thesis />
-    <Skills />
-    <Contact />
+        <About />
+        <Experience />
+        <Projects />
+        <Thesis />
+        <Skills />
+        <Contact />
   </>
 )
 

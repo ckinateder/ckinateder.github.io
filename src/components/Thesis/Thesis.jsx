@@ -12,11 +12,11 @@ const Thesis = () => {
       <h2 className="brutal-title-orange">Master&apos;s Thesis</h2>
       <div className="brutal-card">
         <h3 className={`text-2xl md:text-3xl font-black mb-4 ${
-          theme === 'dark' ? 'text-slate-100' : 'text-slate-900'
+          theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
         }`}>{thesis.title}</h3>
         <h4 className="text-orange-500 font-black mb-4 uppercase tracking-wider">Abstract</h4>
         <p className={`leading-relaxed mb-8 text-base md:text-lg font-medium ${
-          theme === 'dark' ? 'text-slate-200' : 'text-slate-800'
+          theme === 'dark' ? 'text-zinc-200' : 'text-zinc-800'
         }`}>{thesis.description}</p>
         <a
           href={thesis.link}

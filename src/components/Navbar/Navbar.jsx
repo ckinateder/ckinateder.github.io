@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-50 border-b-4 border-black transition-colors duration-150 ${
-        theme === 'dark' ? 'bg-gray-950' : 'bg-slate-100'
+        theme === 'dark' ? 'bg-zinc-900' : 'bg-zinc-100'
       }`}
     >
       <div className='container mx-auto px-6 py-4 flex justify-between items-center'>
@@ -46,7 +46,7 @@ const Navbar = () => {
               key={link.name}
               href={link.href}
               className={`font-bold text-sm transition-colors duration-150 ${
-                theme === 'dark' ? 'text-slate-100 hover:text-orange-500' : 'text-slate-900 hover:text-orange-500'
+                theme === 'dark' ? 'text-zinc-100 hover:text-orange-500' : 'text-zinc-900 hover:text-orange-500'
               }`}
             >
               {link.name}
@@ -56,8 +56,8 @@ const Navbar = () => {
             onClick={toggleTheme}
             className={`p-2 border-2 border-black transition-colors duration-150 ${
               theme === 'dark' 
-                ? 'bg-gray-900 text-slate-100 hover:bg-gray-800' 
-                : 'bg-white text-slate-900 hover:bg-slate-200'
+                ? 'bg-zinc-800 text-zinc-100 hover:bg-zinc-700' 
+                : 'bg-white text-zinc-900 hover:bg-zinc-200'
             }`}
             aria-label='toggle theme'
           >
@@ -71,15 +71,15 @@ const Navbar = () => {
             onClick={toggleTheme}
             className={`p-2 border-2 border-black transition-colors duration-150 ${
               theme === 'dark' 
-                ? 'bg-gray-900 text-slate-100 hover:bg-gray-800' 
-                : 'bg-white text-slate-900 hover:bg-slate-200'
+                ? 'bg-zinc-800 text-zinc-100 hover:bg-zinc-700' 
+                : 'bg-white text-zinc-900 hover:bg-zinc-200'
             }`}
             aria-label='toggle theme'
           >
             {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
           </button>
           <button
-            className={theme === 'dark' ? 'text-slate-100' : 'text-slate-900'}
+            className={theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'}
             onClick={() => setIsOpen(!isOpen)}
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -96,7 +96,7 @@ const Navbar = () => {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.15 }}
             className={`md:hidden absolute top-full left-0 w-full border-b-4 border-black p-6 flex flex-col space-y-4 ${
-              theme === 'dark' ? 'bg-gray-950' : 'bg-slate-100'
+              theme === 'dark' ? 'bg-zinc-900' : 'bg-zinc-100'
             }`}
           >
             {navLinks.map((link) => (
@@ -105,7 +105,7 @@ const Navbar = () => {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className={`text-lg font-bold transition-colors duration-150 ${
-                  theme === 'dark' ? 'text-slate-100 hover:text-orange-500' : 'text-slate-900 hover:text-orange-500'
+                  theme === 'dark' ? 'text-zinc-100 hover:text-orange-500' : 'text-zinc-900 hover:text-orange-500'
                 }`}
               >
                 {link.name}

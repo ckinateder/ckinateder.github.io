@@ -9,7 +9,7 @@ const About = () => {
 
   return (
     <section className={`min-h-screen flex flex-col justify-center py-20 pb-32 transition-colors duration-150 ${
-      theme === 'dark' ? 'bg-gray-950' : 'bg-slate-100'
+      theme === 'dark' ? 'bg-zinc-900' : 'bg-zinc-100'
     }`}>
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -17,21 +17,21 @@ const About = () => {
         transition={{ duration: 0.3, ease: "easeOut" }}
       >
         <h1 className={`text-5xl md:text-7xl font-black mb-6 ${
-          theme === 'dark' ? 'text-slate-100' : 'text-slate-900'
+          theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
         }`}>
           Hi, I'm <span className='text-orange-500'>{name}.</span>
         </h1>
         
         {role && (
           <h2 className={`text-2xl md:text-4xl font-bold mb-8 ${
-            theme === 'dark' ? 'text-slate-200' : 'text-slate-800'
+            theme === 'dark' ? 'text-zinc-200' : 'text-zinc-800'
           }`}>
             {role}
           </h2>
         )}
 
         <p className={`text-base md:text-lg max-w-2xl leading-relaxed mb-10 brutal-card border-4 border-black p-6 ${
-          theme === 'dark' ? 'text-slate-200' : 'text-slate-800'
+          theme === 'dark' ? 'text-zinc-200' : 'text-zinc-800'
         }`}>
           {description}
         </p>

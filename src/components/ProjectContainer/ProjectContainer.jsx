@@ -14,11 +14,11 @@ const ProjectContainer = ({ project }) => {
       className='brutal-card flex flex-col h-full hover:border-orange-500 transition-colors duration-150'
     >
       <h3 className={`text-xl font-black mb-3 ${
-        theme === 'dark' ? 'text-slate-100' : 'text-slate-900'
+        theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
       }`}>{project.name}</h3>
 
       <p className={`mb-6 flex-grow leading-relaxed text-sm font-medium ${
-        theme === 'dark' ? 'text-slate-200' : 'text-slate-800'
+        theme === 'dark' ? 'text-zinc-200' : 'text-zinc-800'
       }`}>{project.description}</p>
     
     <div className='mt-auto'>
@@ -40,7 +40,7 @@ const ProjectContainer = ({ project }) => {
             rel="noopener noreferrer"
             aria-label='source code'
             className={`hover:text-orange-500 transition-colors duration-150 ${
-              theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+              theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
             }`}
           >
             <Github size={20} />
@@ -54,7 +54,7 @@ const ProjectContainer = ({ project }) => {
             rel="noopener noreferrer"
             aria-label='live preview'
             className={`hover:text-orange-500 transition-colors duration-150 ${
-              theme === 'dark' ? 'text-slate-300' : 'text-slate-700'
+              theme === 'dark' ? 'text-zinc-300' : 'text-zinc-700'
             }`}
           >
             <ExternalLink size={20} />

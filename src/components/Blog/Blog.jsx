@@ -9,7 +9,7 @@ const Blog = () => {
         Blog Coming Soon
       </h1>
       <p className={`text-lg max-w-lg font-medium ${
-        theme === 'dark' ? 'text-slate-200' : 'text-slate-800'
+        theme === 'dark' ? 'text-zinc-200' : 'text-zinc-800'
       }`}>
         I'm working on sharing my thoughts and experiences. Stay tuned!
       </p>
