@@ -30,6 +30,7 @@ Please change the parent <Route path="${U}"> to <Route path="${U==="/"?"*":`${U}
 `,jsxRuntimeExports.jsx(a.li,{children:"Nvidia RTX 3060 12GB"}),`
 `]}),`
 `,jsxRuntimeExports.jsx(a.p,{children:"Your configuration will vary; that is fine. I will assume that you have an Nvidia GPU with at least 24GB VRAM total (16GB if only running GPT-OSS 20B). If the models don't fit on your GPU, they can overflow to system RAM, but performance will seriously suffer."}),`
+`,jsxRuntimeExports.jsx(a.p,{children:"Instructions for CPU only are at the very end of this post."}),`
 `,jsxRuntimeExports.jsx(a.h2,{children:"Setup"}),`
 `,jsxRuntimeExports.jsxs(a.p,{children:["Create a directory wherever you want to work on this. I did mine at ",jsxRuntimeExports.jsx(a.code,{children:"~/local-llms"}),". We will refer to this as the root folder."]}),`
 `,jsxRuntimeExports.jsx(a.h3,{children:"Prerequisites"}),`
