@@ -30,7 +30,7 @@ const About = () => {
           </h2>
         )}
 
-        <p className={`text-base md:text-lg max-w-2xl leading-relaxed mb-10 brutal-card border-4 border-black p-6 ${
+        <p className={`text-sm md:text-lg max-w-2xl leading-relaxed mb-10 brutal-card border-4 border-black p-6 ${
           theme === 'dark' ? 'text-zinc-200' : 'text-zinc-800'
         }`}>
           {description}

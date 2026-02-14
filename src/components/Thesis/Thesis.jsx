@@ -15,7 +15,7 @@ const Thesis = () => {
           theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'
         }`}>{thesis.title}</h3>
         <h4 className="text-orange-500 font-black mb-4 uppercase tracking-wider">Abstract</h4>
-        <p className={`leading-relaxed mb-8 text-base md:text-lg font-medium ${
+        <p className={`leading-relaxed mb-8 text-sm md:text-lg font-medium ${
           theme === 'dark' ? 'text-zinc-200' : 'text-zinc-800'
         }`}>{thesis.description}</p>
         <a
