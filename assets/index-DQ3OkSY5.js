@@ -64,7 +64,7 @@ We will use the `,jsxRuntimeExports.jsx(a.a,{href:"https://unsloth.ai/docs/model
 `,jsxRuntimeExports.jsx(a.h3,{children:"Docker Compose Setup"}),`
 `,jsxRuntimeExports.jsx(a.p,{children:"I have a simple docker compose file that I use. A couple of notes:"}),`
 `,jsxRuntimeExports.jsxs(a.ul,{children:[`
-`,jsxRuntimeExports.jsxs(a.li,{children:["We are using ",jsxRuntimeExports.jsx(a.a,{href:"https://github.com/ggml-org/llama.cpp",children:"llama.cpp"}),"with ",jsxRuntimeExports.jsx(a.a,{href:"https://huggingface.co/blog/ggml-org/model-management-in-llamacpp",children:"Llama Router"})," to run the models. I have tried Ollama and llama.cpp with llama-swap, and nothing has worked for as well as what I have here."]}),`
+`,jsxRuntimeExports.jsxs(a.li,{children:["We are using ",jsxRuntimeExports.jsx(a.a,{href:"https://github.com/ggml-org/llama.cpp",children:"llama.cpp"})," with ",jsxRuntimeExports.jsx(a.a,{href:"https://huggingface.co/blog/ggml-org/model-management-in-llamacpp",children:"Llama Router"})," to run the models. I have tried Ollama and llama.cpp with llama-swap, and nothing has worked for as well as what I have here."]}),`
 `,jsxRuntimeExports.jsxs(a.li,{children:["We are using ",jsxRuntimeExports.jsx(a.a,{href:"https://github.com/open-webui/open-webui",children:"OpenWebUI"})," to interact with the models. It works amazingly, supports multimodal models, and can even be configured with web search."]}),`
 `,jsxRuntimeExports.jsx(a.li,{children:"The frontend is configured to be accessible on port 3000"}),`
 `,jsxRuntimeExports.jsxs(a.li,{children:["If your root project folder path is not ",jsxRuntimeExports.jsx(a.code,{children:"~/local-llms"}),", you will need to change these paths to point to yours"]}),`
