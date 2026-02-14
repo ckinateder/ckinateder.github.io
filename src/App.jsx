@@ -8,6 +8,7 @@ import Thesis from './components/Thesis/Thesis'
 import Contact from './components/Contact/Contact'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Blog from './components/Blog/Blog'
+import BlogPost from './components/BlogPost/BlogPost'
 
 const Home = () => (
   <>
@@ -27,6 +28,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/blog' element={<Blog />} />
+        <Route path='/blog/:slug' element={<BlogPost />} />
       </Routes>
       <ScrollToTop />
     </Layout>

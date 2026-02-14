@@ -1,0 +1,125 @@
+---
+title: "How To Set Up Your Own Local LLM"
+date: "2025-02-15"
+---
+
+I have recently gotten into self-hosting open-source large language models on my personal computer. I've looked into tons of different tutorials, tried several different platforms, and have found a setup that works for me – and it all runs in one [Docker Compose](https://docs.docker.com/compose/) file.
+
+![openwebui.png](/blog-images/openwebui.png)
+
+## Who This Tutorial Is For
+
+I will assume you have a basic knowledge of Linux and can execute commands. My goal here is to detail a minimum working setup that can be extended to meet your needs.
+## My System
+I ran all of this on a modest Ubuntu 24.04 server.
+- Intel i7-12700K
+- 48GB DDR4-3200 RAM
+- 2 x 1TB NVMe SSDs
+- Nvidia RTX 5060 Ti 16GB
+- Nvidia RTX 3060 12GB
+
+Your configuration will vary; that is fine. I will assume that you have an Nvidia GPU with at least 24GB VRAM total (16GB if only running GPT-OSS 20B). If the models don't fit on your GPU, they can overflow to system RAM, but performance will seriously suffer.
+## Setup
+Create a directory wherever you want to work on this. I did mine at `~/local-llms`. We will refer to this as the root folder.
+### Prerequisites
+Before we start loading models, make sure you have the following installed:
+- [Docker](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04)
+- [Docker Compose](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04)
+- [Nvidia Container Toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+### Download Models
+We will be using the 4-bit quantized version of these models, but feel free to experiment with what your system can handle. I would not recommend going below 4-bit.
+First, create a folder in your root folder called `models`.
+#### GPT-OSS 20B
+We will use the [Unsloth](https://unsloth.ai/docs/models/gpt-oss-how-to-run-and-fine-tune) link (in [GGUF file format](https://huggingface.co/docs/hub/en/gguf)).
+```bash
+wget https://huggingface.co/unsloth/gpt-oss-20b-GGUF/resolve/main/gpt-oss-20b-UD-Q4_K_XL.gguf
+```
+#### Gemma 3 27B
+In the models directory, create a directory called `gemma-3`. Download the following two files into it.
+We will use the [Unsloth](https://unsloth.ai/docs/models/gemma-3-how-to-run-and-fine-tune) link again.
+```bash
+wget https://huggingface.co/unsloth/gemma-3-27b-it-GGUF/resolve/main/gemma-3-27b-it-UD-Q4_K_XL.gguf
+```
+Since this model supports multimodal, we will need to download the multimodal adapter. This allows our model to input images.
+```bash
+wget https://huggingface.co/unsloth/gemma-3-27b-it-GGUF/resolve/main/mmproj-BF16.gguf
+```
+Once you finish downloading, your root directory should look like:
+```
+└── models
+    ├── gemma-3
+    │   ├── gemma-3-27b-it-UD-Q4_K_XL.gguf
+    │   └── mmproj-BF16.gguf
+    └── gpt-oss-20b-UD-Q4_K_XL.gguf
+```
+### Docker Compose Setup
+I have a simple docker compose file that I use. A couple of notes:
+- We are using [llama.cpp](https://github.com/ggml-org/llama.cpp)with [Llama Router](https://huggingface.co/blog/ggml-org/model-management-in-llamacpp) to run the models. I have tried Ollama and llama.cpp with llama-swap, and nothing has worked for as well as what I have here.
+- We are using [OpenWebUI](https://github.com/open-webui/open-webui) to interact with the models. It works amazingly, supports multimodal models, and can even be configured with web search.
+- The frontend is configured to be accessible on port 3000
+- If your root project folder path is not `~/local-llms`, you will need to change these paths to point to yours
+<script src="https://gist.github.com/ckinateder/af692fca181829e890f7b8decc36b78a.js"></script>
+
+Run the docker compose file with
+```bash
+docker compose up -d
+```
+This should spin up both containers and handle everything for you.
+#### Sanity Check
+Once you download and run the docker compose file, your root project folder should look something like this:
+```
+├── docker-compose.yml
+├── models
+│   ├── gemma-3
+│   │   ├── gemma-3-27b-it-UD-Q4_K_XL.gguf
+│   │   └── mmproj-BF16.gguf
+│   └── gpt-oss-20b-UD-Q4_K_XL.gguf
+└── open-webui
+```
+You can also view the logs for the containers with
+```bash
+docker compose logs -f
+```
+![llamacpp.png](/blog-images/llamacpp.png)
+**Helpful tool:** Install [nvtop](https://github.com/Syllo/nvtop) to view GPU usage (shown above next to the docker logs).
+
+Play around with the parameters in the model configs section:
+```yaml
+configs:
+  llama-cpp-config:
+    # Inline content that will be written verbatim to /config.ini inside the container
+    content: |
+      # ================== GENERAL MODELS ==================
+
+      # ===== Gemma 3 27B (Q4 quantization) =====
+      [Gemma3-27B-Q4]
+      model = /models/gemma-3/gemma-3-27b-it-UD-Q4_K_XL.gguf
+      mmproj = /models/gemma-3/mmproj-BF16.gguf
+      ctx-size = 16384              # Maximum context window
+      prio = 2                      # Model priority (used when multiple models are loaded)
+      temp = 1.0                    # Sampling temperature
+      repeat-penalty = 1.0          # Penalty for repeated tokens
+      min-p = 0.01                  # Minimum probability cutoff
+      top-k = 64                    # Top-K sampling
+      top-p = 0.95                  # Nucleus (Top-P) sampling
+
+      # ===== GPT-OSS 20B (FP16) =====
+      [GPT-OSS-20B]
+      model = /models/gpt-oss-20b-UD-Q4_K_XL.gguf
+      ctx-size = 16384
+      temp = 1.0
+      top-k = 0                     # 0 disables Top-K filtering
+      top-p = 1.0                   # 1.0 disables Top-P filtering
+```
+
+I used what was recommended from Unsloth (linked above), but I would recommend exploring how changing the parameters affect model output and performance.
+
+### To Use CPU Only
+
+If you don't have an Nvidia GPU, you can still use the models by running them on the CPU only. You can use [this docker compose file](https://gist.github.com/ckinateder/499e180d9776e74dcd80e6fec17b7487) to do so.
+In order to run this, I would follow the same steps as above, but instead of downloading Gemma 3 27B, download Gemma 3 4B. You'll need to change it for both the main model and the `mmproj` file.
+```bash
+wget https://huggingface.co/unsloth/gemma-3-4b-it-GGUF/resolve/main/gemma-3-4b-it-UD-Q4_K_XL.gguf
+wget https://huggingface.co/unsloth/gemma-3-4b-it-GGUF/resolve/main/mmproj-BF16.gguf
+```
+Update the paths in your docker compose file as needed.
