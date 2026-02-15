@@ -29,8 +29,8 @@ Please change the parent <Route path="${U}"> to <Route path="${U==="/"?"*":`${U}
 `,jsxRuntimeExports.jsx(a.li,{children:"Nvidia RTX 5060 Ti 16GB"}),`
 `,jsxRuntimeExports.jsx(a.li,{children:"Nvidia RTX 3060 12GB"}),`
 `]}),`
-`,jsxRuntimeExports.jsx(a.p,{children:"Your configuration will vary; that is fine. I will assume that you have an Nvidia GPU with at least 24GB VRAM total (16GB if only running GPT-OSS 20B). If the models don't fit on your GPU, they can overflow to system RAM, but performance will seriously suffer."}),`
-`,jsxRuntimeExports.jsx(a.p,{children:"Instructions for CPU only are at the very end of this post."}),`
+`,jsxRuntimeExports.jsx(a.p,{children:"Your configuration will vary; that is fine. I will assume that you have an Nvidia GPU with at least 24GB VRAM total (16GB if only running GPT-OSS 20B). If the models don't fit on your GPU, they can overflow to system RAM, but performance will suffer. Or, you can download smaller models (Gemma 3 offers multiple sizes) - I just went with the largest models I could fit on my GPU."}),`
+`,jsxRuntimeExports.jsx(a.p,{children:"Instructions for running on the CPU only are at the very end of this post."}),`
 `,jsxRuntimeExports.jsx(a.h2,{children:"Setup"}),`
 `,jsxRuntimeExports.jsxs(a.p,{children:["Create a directory wherever you want to work on this. I did mine at ",jsxRuntimeExports.jsx(a.code,{children:"~/local-llms"}),". We will refer to this as the root folder."]}),`
 `,jsxRuntimeExports.jsx(a.h3,{children:"Prerequisites"}),`
@@ -55,7 +55,8 @@ We will use the `,jsxRuntimeExports.jsx(a.a,{href:"https://unsloth.ai/docs/model
 `,jsxRuntimeExports.jsx(a.p,{children:"Since this model supports multimodal, we will need to download the multimodal adapter. This allows our model to input images."}),`
 `,jsxRuntimeExports.jsx(a.pre,{children:jsxRuntimeExports.jsx(a.code,{className:"language-bash",children:`wget https://huggingface.co/unsloth/gemma-3-27b-it-GGUF/resolve/main/mmproj-BF16.gguf
 `})}),`
-`,jsxRuntimeExports.jsx(a.p,{children:"Once you finish downloading, your root directory should look like:"}),`
+`,jsxRuntimeExports.jsxs(a.p,{children:[jsxRuntimeExports.jsx(a.strong,{children:"Note:"})," For a smaller compute setup, there are ",jsxRuntimeExports.jsx(a.a,{href:"https://huggingface.co/collections/unsloth/gemma-3",children:"smaller versions of Gemma 3"})," available. Look for the ",jsxRuntimeExports.jsx(a.code,{children:"UD-Q4_K_XL"})," variant in the 270M, 1B, 4B, or 12B sizes. Make sure to download the matching ",jsxRuntimeExports.jsx(a.code,{children:"mmproj-BF16.gguf"})," file."]}),`
+`,jsxRuntimeExports.jsx(a.p,{children:"Once you finish downloading, your root project directory should look like:"}),`
 `,jsxRuntimeExports.jsx(a.pre,{children:jsxRuntimeExports.jsx(a.code,{children:`└── models
     ├── gemma-3
     │   ├── gemma-3-27b-it-UD-Q4_K_XL.gguf
@@ -65,7 +66,7 @@ We will use the `,jsxRuntimeExports.jsx(a.a,{href:"https://unsloth.ai/docs/model
 `,jsxRuntimeExports.jsx(a.h3,{children:"Docker Compose Setup"}),`
 `,jsxRuntimeExports.jsx(a.p,{children:"I have a simple docker compose file that I use. A couple of notes:"}),`
 `,jsxRuntimeExports.jsxs(a.ul,{children:[`
-`,jsxRuntimeExports.jsxs(a.li,{children:["We are using ",jsxRuntimeExports.jsx(a.a,{href:"https://github.com/ggml-org/llama.cpp",children:"llama.cpp"})," with ",jsxRuntimeExports.jsx(a.a,{href:"https://huggingface.co/blog/ggml-org/model-management-in-llamacpp",children:"Llama Router"})," to run the models. I have tried Ollama and llama.cpp with llama-swap, and nothing has worked for as well as what I have here."]}),`
+`,jsxRuntimeExports.jsxs(a.li,{children:["We are using ",jsxRuntimeExports.jsx(a.a,{href:"https://github.com/ggml-org/llama.cpp",children:"llama.cpp"})," with ",jsxRuntimeExports.jsx(a.a,{href:"https://huggingface.co/blog/ggml-org/model-management-in-llamacpp",children:"Llama Router"})," to run the models. I have tried Ollama and llama.cpp with llama-swap, and nothing has worked for me as well as what I have here."]}),`
 `,jsxRuntimeExports.jsxs(a.li,{children:["We are using ",jsxRuntimeExports.jsx(a.a,{href:"https://github.com/open-webui/open-webui",children:"OpenWebUI"})," to interact with the models. It works amazingly, supports multimodal models, and can even be configured with web search."]}),`
 `,jsxRuntimeExports.jsx(a.li,{children:"The frontend is configured to be accessible on port 3000"}),`
 `,jsxRuntimeExports.jsxs(a.li,{children:["If your root project folder path is not ",jsxRuntimeExports.jsx(a.code,{children:"~/local-llms"}),", you will need to change these paths to point to yours"]}),`
