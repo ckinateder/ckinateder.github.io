@@ -1,23 +1,13 @@
-import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from '../../contexts/theme'
-import { experience, projects, skills, publications, contact } from '../../portfolio'
+import { publications } from '../../portfolio'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
   const { theme, toggleTheme } = useTheme()
-  const location = useLocation()
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   const navLinks = [
     { name: 'Experience', href: '/#experience' },
@@ -31,84 +21,64 @@ const Navbar = () => {
   ]
 
   return (
-    <nav
-      className={`fixed top-0 left-0 w-full z-50 border-b-4 border-black transition-colors duration-150 ${
-        theme === 'dark' ? 'bg-zinc-900' : 'bg-zinc-100'
-      }`}
-    >
-      <div className='container mx-auto px-6 py-4 flex justify-between items-center'>
-        <Link to='/' className='text-2xl font-black text-orange-500'>
+    <nav className="fixed top-0 left-0 w-full z-50 border-b border-line bg-canvas/95 backdrop-blur-sm transition-colors duration-150">
+      <div className="max-w-6xl mx-auto px-5 md:px-8 py-4 flex justify-between items-center">
+        <Link to="/" className="font-display text-2xl font-bold text-accent tracking-tight">
           CK.
         </Link>
 
-        {/* Desktop Menu */}
-        <div className='hidden md:flex items-center space-x-8'>
+        <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
-              className={`font-bold text-sm transition-colors duration-150 ${
-                theme === 'dark' ? 'text-zinc-100 hover:text-orange-500' : 'text-zinc-900 hover:text-orange-500'
-              }`}
+              className="font-mono text-xs uppercase tracking-wider text-ink hover:text-accent transition-colors duration-150"
             >
               {link.name}
             </a>
           ))}
           <button
             onClick={toggleTheme}
-            className={`p-2 border-2 border-black transition-colors duration-150 ${
-              theme === 'dark' 
-                ? 'bg-zinc-800 text-zinc-100 hover:bg-zinc-700' 
-                : 'bg-white text-zinc-900 hover:bg-zinc-200'
-            }`}
-            aria-label='toggle theme'
+            className="p-2 border border-line text-ink hover:border-accent hover:text-accent transition-colors duration-150"
+            aria-label="toggle theme"
           >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
         </div>
 
-        {/* Mobile Toggle */}
-        <div className='md:hidden flex items-center gap-4'>
+        <div className="md:hidden flex items-center gap-3">
           <button
             onClick={toggleTheme}
-            className={`p-2 border-2 border-black transition-colors duration-150 ${
-              theme === 'dark' 
-                ? 'bg-zinc-800 text-zinc-100 hover:bg-zinc-700' 
-                : 'bg-white text-zinc-900 hover:bg-zinc-200'
-            }`}
-            aria-label='toggle theme'
+            className="p-2 border border-line text-ink hover:border-accent hover:text-accent transition-colors duration-150"
+            aria-label="toggle theme"
           >
-            {theme === 'dark' ? <Sun size={20} /> : <Moon size={20} />}
+            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
           </button>
           <button
-            className={theme === 'dark' ? 'text-zinc-100' : 'text-zinc-900'}
+            className="text-ink"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="toggle menu"
           >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20 }}
+            initial={{ opacity: 0, y: -12 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={{ opacity: 0, y: -12 }}
             transition={{ duration: 0.15 }}
-            className={`md:hidden absolute top-full left-0 w-full border-b-4 border-black p-6 flex flex-col space-y-4 ${
-              theme === 'dark' ? 'bg-zinc-900' : 'bg-zinc-100'
-            }`}
+            className="md:hidden absolute top-full left-0 w-full border-b border-line bg-canvas p-6 flex flex-col gap-4"
           >
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className={`text-lg font-bold transition-colors duration-150 ${
-                  theme === 'dark' ? 'text-zinc-100 hover:text-orange-500' : 'text-zinc-900 hover:text-orange-500'
-                }`}
+                className="font-mono text-sm uppercase tracking-wider text-ink hover:text-accent transition-colors duration-150"
               >
                 {link.name}
               </a>

@@ -1,18 +1,34 @@
 import { experience } from '../../portfolio'
+import { motion } from 'framer-motion'
 import ExperienceContainer from '../ExperienceContainer/ExperienceContainer'
+import { fadeUp, staggerContainer, viewportOnce } from '../../motion/variants'
 
 const Experience = () => {
   if (!experience.length) return null
 
   return (
-    <section id='experience' className='py-20'>
-      <h2 className='brutal-title-orange'>Experience</h2>
+    <section id="experience" className="py-20 signal-rule">
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
+        <p className="signal-index mb-3">01 — EXPERIENCE</p>
+        <h2 className="signal-title">Experience</h2>
+      </motion.div>
 
-      <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
+      <motion.div
+        className="flex flex-col"
+        variants={staggerContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOnce}
+      >
         {experience.map((exp, id) => (
-          <ExperienceContainer key={id} experience={exp} />
+          <ExperienceContainer key={id} experience={exp} index={id} />
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

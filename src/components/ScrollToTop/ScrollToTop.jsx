@@ -13,9 +13,13 @@ const ScrollToTop = () => {
   }, [])
 
   return isVisible ? (
-    <div className='fixed bottom-8 right-8 z-50'>
-      <a href='#top' className='p-3 bg-orange-500 border-4 border-black hover:bg-orange-600 transition-colors duration-150 flex items-center justify-center text-white'>
-        <ArrowUp size={24} />
+    <div className="fixed bottom-8 right-8 z-50">
+      <a
+        href="#top"
+        className="p-3 bg-accent text-white border border-accent hover:bg-transparent hover:text-accent transition-colors duration-150 flex items-center justify-center"
+        aria-label="Scroll to top"
+      >
+        <ArrowUp size={20} />
       </a>
     </div>
   ) : null

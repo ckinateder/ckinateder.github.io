@@ -5,7 +5,20 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        canvas: 'var(--color-canvas)',
+        surface: 'var(--color-surface)',
+        ink: 'var(--color-ink)',
+        muted: 'var(--color-muted)',
+        line: 'var(--color-line)',
+        accent: 'var(--color-accent)',
+      },
+      fontFamily: {
+        display: ['"Space Grotesk"', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+      },
+    },
   },
   plugins: [],
 }

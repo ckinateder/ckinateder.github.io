@@ -1,16 +1,11 @@
 import Navbar from './Navbar/Navbar'
 import Footer from './Footer/Footer'
-import { useTheme } from '../contexts/theme'
 
 const Layout = ({ children }) => {
-  const { theme } = useTheme()
-  
   return (
-    <div className={`relative min-h-screen flex flex-col transition-colors duration-150 ${
-      theme === 'dark' ? 'bg-zinc-900 text-zinc-100' : 'bg-zinc-100 text-zinc-900'
-    }`}>
+    <div className="relative min-h-screen flex flex-col bg-canvas text-ink transition-colors duration-150">
       <Navbar />
-      <main className="container mx-auto px-4 md:px-8 pt-24 pb-12 flex-grow">
+      <main className="w-full max-w-6xl mx-auto px-5 md:px-8 pt-28 pb-16 flex-grow">
         {children}
       </main>
       <Footer />
