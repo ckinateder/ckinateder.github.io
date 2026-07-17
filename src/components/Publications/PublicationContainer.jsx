@@ -13,9 +13,14 @@ const PublicationContainer = ({ publication, index }) => {
       <div className="flex flex-col md:flex-row gap-4 md:gap-8">
         <span className="font-mono text-xs text-accent shrink-0 pt-1">{num}</span>
         <div className="min-w-0 flex-grow">
-          <h3 className="font-display text-xl md:text-2xl font-bold text-ink mb-3 group-hover:text-accent transition-colors duration-150">
+          <h3 className="font-display text-xl md:text-2xl font-bold text-ink mb-2 group-hover:text-accent transition-colors duration-150">
             {publication.title}
           </h3>
+          {publication.venue && (
+            <p className="font-mono text-xs text-muted mb-3">
+              {publication.venue}
+            </p>
+          )}
           <p className="font-mono text-xs uppercase tracking-wider text-accent mb-4">
             Abstract
           </p>

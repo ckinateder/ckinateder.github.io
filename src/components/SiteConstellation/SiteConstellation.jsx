@@ -1,9 +1,9 @@
 import { useEffect, useRef } from 'react'
 
-const NODE_COUNT = 36
+const NODE_COUNT = 50
 const SIGNAL_COUNT = 5
 const LINK_DIST = 0.22
-const MAX_PULL = 12
+const MAX_PULL = 30
 const PULL_RADIUS = 160
 const BASE_OPACITY = 0.28
 const HERO_OPACITY = 0.55
