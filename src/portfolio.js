@@ -132,10 +132,20 @@ const contact = {
   meeting: 'https://cal.com/calvin-kinateder-pj379i/30min',
 }
 
-const thesis = {
-  title: 'A Novel Approach To Implementing Knowledge Distillation In Tsetlin Machines',
-  link: 'https://drive.google.com/file/d/1H3Vv4RFBbQX8l7AghBGuidi_6qXoA4YN/view?usp=sharing',
-  description: "We introduce a novel knowledge distillation approach for Tsetlin Machines that probabilistically selects the most important clauses from a larger teacher model and transfers them to a smaller student. This method significantly improves student accuracy without increasing latency, as demonstrated on image recognition and text classification tasks."
-}
+const publications = [
+  {
+    title: 'Distribution-Enhanced Knowledge Distillation',
+    link: 'https://doi.org/10.1016/j.neucom.2026.133605',
+    description:
+      "The Tsetlin Machine (TM) is a framework that uses propositional logic to learn patterns from data by creating human-interpretable conjunctive clauses. Similar to neural networks, TM accuracy generally increases with model size, and larger clause sets lead to slower training and higher memory usage. Knowledge distillation (KD) is widely used in neural networks to transfer information from a large teacher model to a smaller student model, improving accuracy without increasing training time. Extending KD to Tsetlin Machines is not straightforward due to the absence of differentiable logits. Consequently, we propose Distribution-Enhanced Knowledge Distillation (DKD), a TM-based framework that adapts KD principles to TMs. DKD transfers knowledge through two mechanisms: (1) an intelligent clause-selection algorithm that identifies and initializes the student with the most informative teacher clauses, and (2) a probability-based distillation scheme that generates soft distributions from the teacher's unclamped class sums and incorporates them into the student's training feedback. Together, these components allow the student to learn higher-level decision patterns normally accessible only to a larger TM. Experiments on benchmark image and text datasets demonstrate that DKD consistently improves student accuracy while maintaining inference time when compared to a parametrically identical baseline. This approach effectively narrows the performance gap between teacher and student models, offering a practical path toward deploying compact and interpretable Tsetlin Machines in resource-constrained environments.",
+  },
+  {
+    title:
+      'A Novel Approach To Implementing Knowledge Distillation In Tsetlin Machines',
+    link: 'https://drive.google.com/file/d/1H3Vv4RFBbQX8l7AghBGuidi_6qXoA4YN/view?usp=sharing',
+    description:
+      'We introduce a novel knowledge distillation approach for Tsetlin Machines that probabilistically selects the most important clauses from a larger teacher model and transfers them to a smaller student. This method significantly improves student accuracy without increasing latency, as demonstrated on image recognition and text classification tasks.',
+  },
+]
 
-export { header, about, projects, experience, skills, contact, thesis }
+export { header, about, projects, experience, skills, contact, publications }

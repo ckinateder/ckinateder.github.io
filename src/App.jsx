@@ -4,7 +4,7 @@ import About from './components/About/About'
 import Projects from './components/Projects/Projects'
 import Experience from './components/Experience/Experience'
 import Skills from './components/Skills/Skills'
-import Thesis from './components/Thesis/Thesis'
+import Publications from './components/Publications/Publications'
 import Contact from './components/Contact/Contact'
 import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 import Blog from './components/Blog/Blog'
@@ -15,7 +15,7 @@ const Home = () => (
         <About />
         <Experience />
         <Projects />
-        <Thesis />
+        <Publications />
         <Skills />
         <Contact />
   </>

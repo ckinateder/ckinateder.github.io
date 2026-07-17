@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, Sun, Moon } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useTheme } from '../../contexts/theme'
-import { experience, projects, skills, thesis, contact } from '../../portfolio'
+import { experience, projects, skills, publications, contact } from '../../portfolio'
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
@@ -22,7 +22,9 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Experience', href: '/#experience' },
     { name: 'Projects', href: '/#projects' },
-    { name: 'Thesis', href: '/#thesis' },
+    ...(publications.length
+      ? [{ name: 'Publications', href: '/#publications' }]
+      : []),
     { name: 'Skills', href: '/#skills' },
     { name: 'Contact', href: '/#contact' },
     { name: 'Blog', href: '/blog' },
